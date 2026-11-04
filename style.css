@@ -87,16 +87,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 .panel {
-  scroll-margin-top: 96px;
-  padding: 0 48px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 48px;
   background: #000;
 }
-
-#about { padding-top: 12px; }
-
-.panel + .panel { margin-top: 56px; }
-
-#contact { padding-bottom: 140px; }
 
 .kicker {
   margin: 0 0 18px;
@@ -153,5 +151,5 @@ a { color: inherit; text-decoration: none; }
   .nav { padding: 22px 20px; }
   .nav nav { gap: 16px; }
   .nav a { font-size: 10px; letter-spacing: 0.22em; }
-  .panel { padding-left: 20px; padding-right: 20px; }
+  .panel { padding: 96px 20px; }
 }
