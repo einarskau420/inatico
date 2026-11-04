@@ -71,6 +71,8 @@ a { color: inherit; text-decoration: none; }
   object-fit: contain;
   object-position: center;
   display: block;
+  transform-origin: center 42%;
+  will-change: transform, opacity;
 }
 
 .hero::after {
@@ -118,6 +120,49 @@ a { color: inherit; text-decoration: none; }
 }
 
 .panel p + p { margin-top: 16px; }
+
+.js .panel .copy {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+.js .panel.is-in .copy {
+  opacity: 1;
+  transform: none;
+  transition: opacity 780ms ease, transform 780ms ease;
+}
+
+.sign {
+  margin: 40px 0 0;
+  color: var(--ink);
+}
+
+.sign svg {
+  display: block;
+  width: min(240px, 70vw);
+  height: auto;
+}
+
+.sign figcaption {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .panel .copy {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero img {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
 
 .panel a { color: var(--ink); border-bottom: 1px solid rgba(243, 239, 233, 0.35); }
 
