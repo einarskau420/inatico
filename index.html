@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Inatico</title>
   <meta name="description" content="Inatico. PromoteIt, Famefeeds, Perceptly, Naomi, and Studio 16.">
-  <link rel="stylesheet" href="./style.css?v=16">
+  <link rel="stylesheet" href="./style.css?v=17">
 </head>
 <body>
   <main>
@@ -20,24 +20,35 @@
           <span class="app-icon"><img src="./apps/promoteit.png" alt=""></span>
           <span class="app-name">PromoteIt</span>
         </a>
-        <a class="app" href="https://famefeeds.com">
-          <span class="app-icon"><img src="./apps/famefeeds.png" alt=""></span>
-          <span class="app-name">Famefeeds</span>
-        </a>
         <a class="app" href="https://perceptly.co">
           <span class="app-icon"><img src="./apps/perceptly.png" alt=""></span>
           <span class="app-name">Perceptly</span>
         </a>
+        <span class="app is-center">
+          <span class="app-icon"><img src="./apps/studio16.png" alt=""></span>
+          <span class="app-name">Studio 16</span>
+        </span>
         <a class="app" href="https://naomiface.co">
           <span class="app-icon"><img src="./apps/naomi.png" alt=""></span>
           <span class="app-name">Naomi</span>
         </a>
-        <span class="app">
-          <span class="app-icon"><img src="./apps/studio16.png" alt=""></span>
-          <span class="app-name">Studio 16</span>
-        </span>
+        <a class="app" href="https://famefeeds.com">
+          <span class="app-icon"><img src="./apps/famefeeds.png" alt=""></span>
+          <span class="app-name">Famefeeds</span>
+        </a>
       </nav>
     </section>
   </main>
+  <script>
+    (() => {
+      const row = document.querySelector(".apps nav");
+      const mid = row.querySelector(".is-center");
+      const place = () => {
+        row.scrollLeft = mid.offsetLeft - (row.clientWidth - mid.offsetWidth) / 2;
+      };
+      place();
+      window.addEventListener("resize", place);
+    })();
+  </script>
 </body>
 </html>
